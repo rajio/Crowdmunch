@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Crowdmunch</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Boogaloo' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Fugaz+One' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<header class="fixed">
+		<img src="img/1277739967961.jpg" id="logo"></img> 
+		<div id="title-div">
+			<h1 id="fixed-text"><a href="#">CrowdMunch!</a></h1>
+		</div>
+		<div id="bar-btns">
+			<div id="home"><a href="">Home</a></div>
+			<div id="how" ><a href="">How it works</a></div>
+			<div id="contact"><a href="">Contact us!</a></div>
+		</div>
+		<form id="search-form">
+			<label for="username"></label>
+			<input type="text" name="search" id="search" value="Search!">
+		</form>
+	</header> 
+
+<%= yield %>
+
+<!-- scripts go here-->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		$("#search").focus(function(){
+			$search = $(this);
+			$search.attr("value", "")
+		}).blur(function(){
+			$search = $(this);
+			$search.attr("value", "Search!")
+		});
+	</script>
+		<!-- HeadRoom direct plugin online from http://codeasp.net/blogs/raghav_khunger/microsoft-net/2314/how-to-use-headroom-js -->
+		<style type="text/css">
+		.headroom {position: fixed;top: 0;left: 0;right: 0;transition: all .3s ease-in-out;}
+		.headroom--unpinned {top: -100px;}
+		.headroom--pinned {top: 0;}
+		</style>
+		<script  type="text/javascript"  src="https://rawgithub.com/WickyNilliams/headroom.js/master/dist/headroom.js"></script>      
+		<script  type="text/javascript"  src="https://rawgithub.com/WickyNilliams/headroom.js/master/src/jQuery.headroom.js"></script>
+		<script type="text/javascript">
+		$(".fixed").headroom();
+		</script>
+</body>
+</html>
