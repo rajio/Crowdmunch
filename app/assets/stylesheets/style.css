@@ -154,8 +154,15 @@ a{
 	background-image: url("../img/textures/textured_paper.png")
 }
 
+#wrapper-header{
+	color: #0b1902;
+	position: absolute;
+	margin-left: 20px;
+}
+
 .feature {
 	margin: 15px;
+	margin-top: 55px;
 	padding: 10px;
 	border: 2px solid rgba(45,74,95,.9);
 	border-radius: 10px;
@@ -175,11 +182,11 @@ a{
 }
 
 .product-name{
-	color: black;
+	color: #0b1902;
 }
 
 .product-description{
-
+	color: #0b1902;
 }
 
 #map{
