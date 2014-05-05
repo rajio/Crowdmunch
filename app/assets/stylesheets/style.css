@@ -229,8 +229,7 @@ a{
 }
 
 .feature-nav-links{
-	position: relative;
-	bottom: -70px;
+	position: static;
 }
 
 .feature h6{
