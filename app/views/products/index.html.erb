@@ -33,6 +33,9 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">veggies <b class="caret"></b></a>
               <ul class="dropdown-menu">
+                <li><a href="#">Local Veggies</a></li>
+                <li><a href="#">Imported goods</a></li>
+                <li class="divider"></li>
                 <li>
                   <form class="navbar-form navbar-left" role="search">
                     <div class="form-group">
@@ -41,20 +44,22 @@
                     <button id="form-submit" type="submit" class="btn btn-default">Submit</button>
                   </form>
                 </li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
               </ul>
             </li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">fruits <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">fruits<b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
+                <li><a href="#">Local Produce</a></li>
+                <li><a href="#">Imported Fruits</a></li>
                 <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-                <li class="divider"></li>
-                <li><a href="#">One more separated link</a></li>
+                <li>
+                  <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button id="form-submit" type="submit" class="btn btn-default">Submit</button>
+                  </form>
+                </li>
               </ul>
             </li>
             <li class="dropdown">
@@ -119,21 +124,34 @@
 
 
     <div id="wrapper" class="content">
-      <h2 id="wrapper-header">Listing Products</h1>
+      <h2 id="wrapper-header">Featured Products</h1>
         <% @products.each do |product| %>
         <div class="feature">
-          <a href="#"><h2 class="product-name"><%= product.name %></h2></a>
-          <a href="#"><img src="<%= product.ref_pic %>"></a>
-          <h6>Bulk progress!</h6>
-          <!-- Prog-bar item -->
-          <div class="prog-wrap">
-            <div class="prog-bar"></div>
+          <!-- featured pic wrapper div -->
+          <div class="feature-pic-wrapper">
+            <a href="<%= product.ref_pic %>">[name of picture]</a>
+            <!-- <a href="#"><img src="<%= product.ref_pic %>"></a> -->
           </div>
-          <p class="product-description">
-            <%= product.description %>
-          </p>
-          <%= link_to 'Show', product_path(product) %>
-          <%= link_to 'Edit', edit_product_path(product) %>
+          <div class="feature-info-section-wrapper">
+            <div class="feature-title-wrapper">
+              <a href="#"><h2 class="product-name"><%= product.name %></h2>
+              </a>
+            </div>
+            <div class="feature-prog-bar-wrapper">
+              <h6>Bulk progress!</h6>
+              <!-- Prog-bar item -->
+              <div class="prog-wrap">
+                <div class="prog-bar"></div>
+              </div>
+            </div>
+            <p class="product-description">
+              <%= product.description %>
+            </p>
+          </div>
+          <div class="feature-nav-links">
+            <%= link_to 'Show', product_path(product) %>
+            <%= link_to 'Edit', edit_product_path(product) %>
+          </div>
         </div>
         <% end %>
       </div>
