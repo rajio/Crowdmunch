@@ -216,7 +216,7 @@ a{
   	background: transparent url(/assets/tiger.jpg) center center no-repeat;*/
 }
 
-/*This controls the image centering*/
+/*This controls the image centering. Size of image is ~240 by 200 px */
 #feature-pic{
 	left: 50%;
 	margin-left: -100%;
